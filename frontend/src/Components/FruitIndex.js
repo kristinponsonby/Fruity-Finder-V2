@@ -6,6 +6,8 @@ function FruitIndex() {
   const [loading, setLoading] = useState(true);
   const [apiData, setApiData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredResults, setFiltered] = useState([]);
+
   const getFruits = () =>
     axios
       .get('/fruits')
@@ -17,50 +19,37 @@ function FruitIndex() {
   useEffect(() => {
     getFruits();
   }, []);
+
+  useEffect(() => {
+    const filtered = apiData.filter((f) =>
+      f.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFiltered(filtered);
+  }, [searchTerm]);
+
   return (
     <div className="fruit-container">
       <input
         className="search"
         type="text"
-        placeholder="Search by name"
+        placeholder="Search..."
         onChange={(event) => {
           setSearchTerm(event.target.value);
         }}
       />
-
-      {apiData
-        .filter((fruit) => {
-          if (searchTerm === '') {
-            return (
-              <FruitCard
-                genus={fruit.genus}
-                name={fruit.name}
-                family={fruit.family}
-                order={fruit.order}
-                nutrition={fruit.nutritions}
-              />
-            );
-          }
-          if (fruit.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-            return fruit;
-          }
+      {loading ? (
+        <div className="loading"></div>
+      ) : (
+        filteredResults.map((f, i) => {
+          return (
+            <div className="fruit" key={i}>
+              <FruitCard {...f} />
+            </div>
+          );
         })
-        .map((fruit, i) => (
-          <div className="fruit" key={i}>
-            <FruitCard
-              genus={fruit.genus}
-              name={fruit.name}
-              family={fruit.family}
-              order={fruit.order}
-              nutrition={fruit.nutritions}
-              key={i}
-            />
-          </div>
-        ))}
-
-      {loading ? <div className="loading"> Loading... </div> : null}
+      )}
     </div>
   );
-}
+};
 
 export default FruitIndex;
