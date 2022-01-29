@@ -4,6 +4,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+ 
+}
+
+body {
+  margin: 0;
+  background-image: url("fruits.png");
 }
 
 .App-logo {
@@ -17,16 +23,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -43,9 +39,12 @@
 
 
 .header-text {
-  text-align: center;
-  margin-top: 10px;
-  color:#282c34;
+  text-align: center;;
+  margin-bottom: 50px;
+  padding: 40px;
+  background-color: white;
+  color:rgb(64, 135, 163);
+  opacity: 90%;
 }
 
 .fruit-container {
@@ -56,14 +55,16 @@
 }
 
 .card {
-  width: 400px;
+  width: 300px;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(52, 28, 117);
+  background-color: rgb(64, 135, 163);
   padding: 5px;
   margin: 25px;
+  border-radius: 10px;
+  opacity: 90%;
 }
 
 .text {
@@ -83,4 +84,5 @@
   height: 40px;
   font-size: 20px;
   padding-left: 10px;
+  border-radius: 15px;
 }

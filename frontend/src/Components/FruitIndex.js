@@ -25,10 +25,12 @@ const FruitIndex = () => {
             getFruits();
           }, []);
 
+      
 
         return (
             <div className="fruit-container"> 
-                <input className="search" type="text" placeholder="Search..." onChange={ event => { setSearchTerm(event.target.value) } } />
+            
+            <input className="search" type="text" placeholder="Search by name"  onChange={ event => { setSearchTerm(event.target.value) } } />
 
                 { apiData.filter((fruit) => {
                     if (searchTerm === '') {
@@ -37,6 +39,7 @@ const FruitIndex = () => {
                                 name={fruit.name}
                                 family={fruit.family}
                                 order={fruit.order}
+                                nutrition={fruit.nutritions}
                                 />
                   } else if (fruit.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                         return fruit
@@ -51,6 +54,7 @@ const FruitIndex = () => {
                           name={fruit.name}
                           family={fruit.family}
                           order={fruit.order}
+                          nutrition={fruit.nutritions}
                           key={i}
                           />
                   </div>

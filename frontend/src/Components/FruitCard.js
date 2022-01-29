@@ -1,4 +1,4 @@
-const FruitCard = ({genus, name, family, order}) => {
+const FruitCard = ({genus, name, family, order, nutritions}) => {
 
     return (
         <div className='card' >
