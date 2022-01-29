@@ -2,16 +2,16 @@ import './assets/App.css';
 import React from 'react';
 import FruitIndex from './Components/FruitIndex';
 
+function App() {
+  return (
+    <div className="header">
+      <div className="header-text">
+        <h1>Welcome to Fruity Finder</h1>
+      </div>
 
-
-const App = () => {
-  return <div className="header">
-    <div className="header-text"><h1>Welcome to Fruity Finder</h1></div>
- 
-       <FruitIndex />
-
+      <FruitIndex />
     </div>
-       
+  );
 }
 
 export default App;
