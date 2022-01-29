@@ -10,6 +10,7 @@
 body {
   margin: 0;
   background-image: url("fruits.png");
+  font-size: 16px;
 }
 
 
@@ -74,4 +75,12 @@ body {
   font-size: 20px;
   padding-left: 10px;
   border-radius: 15px;
+}
+
+#liker {
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  margin: 15px
 }
