@@ -4,6 +4,8 @@
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/prop-types": ["disabled", { "ignore": "ignore", "customValidators": "customValidator", "skipUndeclared": "skipUndeclared" }]
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": "off", 
+    "react/no-array-index-key": "off"
   }
 }

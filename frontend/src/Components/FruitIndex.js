@@ -32,24 +32,22 @@ function FruitIndex() {
       <input
         className="search"
         type="text"
-        placeholder="Search..."
+        placeholder="Search by name"
         onChange={(event) => {
           setSearchTerm(event.target.value);
         }}
       />
       {loading ? (
-        <div className="loading"></div>
+        <div className="loading" />
       ) : (
-        filteredResults.map((f, i) => {
-          return (
-            <div className="fruit" key={i}>
-              <FruitCard {...f} />
-            </div>
-          );
-        })
+        filteredResults.map((f, i) => (
+          <div className="fruit" key={i}>
+            <FruitCard {...f} />
+          </div>
+        ))
       )}
     </div>
   );
-};
+}
 
 export default FruitIndex;

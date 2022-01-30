@@ -8,7 +8,6 @@ function App() {
       <div className="header-text">
         <h1>Welcome to Fruity Finder</h1>
       </div>
-
       <FruitIndex />
     </div>
   );
