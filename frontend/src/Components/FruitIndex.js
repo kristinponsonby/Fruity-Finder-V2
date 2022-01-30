@@ -13,7 +13,8 @@ function FruitIndex() {
       .get('/fruits')
       .then((response) => response.data)
       .then((data) => {
-        setApiData((fruit) => [...fruit, ...data]);
+        setApiData(data);
+        setFiltered(data);
         setLoading(false);
       });
   useEffect(() => {
@@ -40,11 +41,7 @@ function FruitIndex() {
       {loading ? (
         <div className="loading" />
       ) : (
-        filteredResults.map((fruit, i) => (
-          <div className="fruit" key={i}>
-            <FruitCard {...fruit} />
-          </div>
-        ))
+        filteredResults.map((fruit, i) => <FruitCard {...fruit} key={i} />)
       )}
     </div>
   );
