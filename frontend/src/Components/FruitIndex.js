@@ -21,8 +21,8 @@ function FruitIndex() {
   }, []);
 
   useEffect(() => {
-    const filtered = apiData.filter((f) =>
-      f.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = apiData.filter((fruit) =>
+      fruit.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFiltered(filtered);
   }, [searchTerm]);
@@ -40,9 +40,9 @@ function FruitIndex() {
       {loading ? (
         <div className="loading" />
       ) : (
-        filteredResults.map((f, i) => (
+        filteredResults.map((fruit, i) => (
           <div className="fruit" key={i}>
-            <FruitCard {...f} />
+            <FruitCard {...fruit} />
           </div>
         ))
       )}
