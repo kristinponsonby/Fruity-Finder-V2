@@ -23,3 +23,5 @@ Start the front end server by running:
 npm start
 
 Visit http://localhost:3000/ and type a letter into the search bar to retrieve fruits by name. 
+
+<iframe src="https://giphy.com/embed/tlUcU5t8oHsikZd3dL" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/react-javascript-expressjs-tlUcU5t8oHsikZd3dL">via GIPHY</a></p>
