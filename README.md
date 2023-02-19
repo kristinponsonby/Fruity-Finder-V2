@@ -24,4 +24,4 @@ npm start
 
 Visit http://localhost:3000/ and type a letter into the search bar to retrieve fruits by name. 
 
-![](https://github.com/Fruity-Finder-V2/giphy.mp4)
+![](giphy.gif)
